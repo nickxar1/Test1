@@ -1,0 +1,186 @@
+{
+	"_version": "1.8.0",
+	"sap.app": {
+		"id": "ntt.bodycote.zui_pp_wkcenter",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"tags": {
+			"keywords": []
+		},
+		"dataSources": {
+			"mainService": {
+				"uri": "/sap/opu/odata/sap/ZPP_WORKCENTER_SRV/",
+				"type": "OData",
+				"settings": {
+					"annotations": [
+						"ZPP_WORKCENTER_ANNO_MDL"
+					],
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZPP_WORKCENTER_ANNO_MDL": {
+				"uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZPP_WORKCENTER_ANNO_MDL',Version='0001')/$value/",
+				"type": "ODataAnnotation",
+				"settings": {
+					"localUri": "localService/ZPP_WORKCENTER_ANNO_MDL.xml"
+				}
+			}
+		},
+		"offline": false,
+		"sourceTemplate": {
+			"id": "ui5template.smartTemplate",
+			"version": "1.40.12"
+		},
+		"crossNavigation": {
+			"inbounds": {},
+			"outbounds": {
+				"toWorkCenter": {
+					"semanticObject": "WorkCenter",
+					"action": "create"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_fiori_3"
+		]
+	},
+	"sap.ui5": {
+		"resources": {
+			"js": [],
+			"css": []
+		},
+		"dependencies": {
+			"minUI5Version": "1.65.6",
+			"libs": {
+				"sap.ui.core": {
+					"lazy": false
+				},
+				"sap.ui.generic.app": {
+					"lazy": false
+				},
+				"sap.suite.ui.generic.template": {
+					"lazy": false
+				}
+			},
+			"components": {}
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			},
+			"@i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			},
+			"i18n|sap.suite.ui.generic.template.ListReport|ZC_WorkCenter": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/ListReport/ZC_WorkCenter/i18n.properties"
+			},
+			"i18n|sap.suite.ui.generic.template.ObjectPage|ZC_WorkCenter": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/ObjectPage/ZC_WorkCenter/i18n.properties"
+			},
+			"": {
+				"dataSource": "mainService",
+				"preload": true,
+				"settings": {
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Inline",
+					"refreshAfterChange": false,
+					"metadataUrlParams": {
+						"sap-value-list": "none"
+					}
+				}
+			}
+		},
+		"extends": {
+			"extensions": {
+				"sap.ui.controllerExtensions": {
+					"sap.suite.ui.generic.template.ListReport.view.ListReport": {
+						"controllerName": "ntt.bodycote.zui_pp_wkcenter.ext.controller.ListReportExt",
+						"sap.ui.generic.app": {
+							"ZC_WorkCenter": {
+								"EntitySet": "ZC_WorkCenter",
+								"Actions": {
+									"ActionZC_WorkCenter1": {
+										"id": "ActionZC_WorkCenter1button",
+										"text": "{@i18n>ActionZC_WorkCenter1}",
+										"press": "onClickActionZC_WorkCenter1"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		}
+	},
+	"sap.ui.generic.app": {
+		"_version": "1.3.0",
+		"settings": {
+			"forceGlobalRefresh": false,
+			"objectPageHeaderType": "Dynamic",
+			"showDraftToggle": false
+		},
+		"pages": {
+			"ListReport|ZC_WorkCenter": {
+				"entitySet": "ZC_WorkCenter",
+				"component": {
+					"name": "sap.suite.ui.generic.template.ListReport",
+					"list": true,
+					"settings": {
+						"filterSettings": {
+							"dateSettings": {
+								"useDateRange": true
+							}
+						},
+						"smartVariantManagement": true,
+						"condensedTableLayout": true
+					}
+				},
+				"pages": {
+					"ObjectPage|ZC_WorkCenter": {
+						"entitySet": "ZC_WorkCenter",
+						"defaultLayoutTypeIfExternalNavigation": "MidColumnFullScreen",
+						"component": {
+							"name": "sap.suite.ui.generic.template.ObjectPage"
+						}
+					}
+				}
+			}
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": ""
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/sap/zui_pp_wkcenter/webapp",
+		"_version": "1.1.0"
+	}
+}

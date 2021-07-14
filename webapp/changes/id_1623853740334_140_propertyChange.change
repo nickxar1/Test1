@@ -1,0 +1,43 @@
+{
+	"fileName": "id_1623853740334_140_propertyChange",
+	"fileType": "change",
+	"changeType": "propertyChange",
+	"moduleName": "",
+	"reference": "ntt.bodycote.zui_pp_wkcenter.Component",
+	"packageName": "$TMP",
+	"content": {
+		"property": "useExportToExcel",
+		"newValue": true
+	},
+	"selector": {
+		"id": "ntt.bodycote.zui_pp_wkcenter::sap.suite.ui.generic.template.ListReport.view.ListReport::ZC_WorkCenter--listReport",
+		"type": "sap.ui.comp.smarttable.SmartTable",
+		"idIsLocal": false
+	},
+	"layer": "CUSTOMER_BASE",
+	"texts": {},
+	"namespace": "apps/ntt.bodycote.zui_pp_wkcenter/changes/",
+	"projectId": "ntt.bodycote.zui_pp_wkcenter",
+	"creation": "2021-06-16T14:29:10.431Z",
+	"originalLanguage": "EN",
+	"conditions": {},
+	"context": "",
+	"support": {
+		"generator": "Change.createInitialFileContent",
+		"service": "",
+		"user": "",
+		"sapui5Version": "1.71.33",
+		"sourceChangeFileName": "",
+		"compositeCommand": ""
+	},
+	"oDataInformation": {},
+	"dependentSelector": {},
+	"validAppVersions": {
+		"creation": "1.0.0",
+		"from": "1.0.0",
+		"to": "1.0.0"
+	},
+	"jsOnly": false,
+	"variantReference": "",
+	"appDescriptorChange": false
+}
